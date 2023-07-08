@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { styles } from "../style";
-import { NavLinks } from "../constants";
+// import { NavLinks } from "../constants";
 import { logo, menu, close } from "../assets";
 
 const Navbar = () => {
@@ -30,6 +30,13 @@ const Navbar = () => {
             className="w-9 h-9
           object-contain"
           />
+          <p
+            className="text-white text-[18px] font-bold
+          cursor-pointer"
+          >
+            Ugbe Adie
+            <span className="sm:block hidden"> | Frontend Developer</span>
+          </p>
         </Link>
       </div>
     </nav>
