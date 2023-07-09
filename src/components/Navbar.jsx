@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { styles } from "../style";
-// import { NavLinks } from "../constants";
+import { navLinks } from "../constants/";
 import { logo, menu, close } from "../assets";
 
 const Navbar = () => {
-  const [active, setActive] = "";
+  const [active, setActive] = useState("");
 
   return (
     <nav
@@ -38,6 +38,19 @@ const Navbar = () => {
             <span className="sm:block hidden"> | Frontend Developer</span>
           </p>
         </Link>
+        <ul className="list-none hidden sm:flex flex-row gap-10">
+          {navLinks.map((link) => (
+            <li
+              key={link.id}
+              className={`${
+                active === link.title ? "text-white" : "text-secondary"
+              } hover:text-white text-[18px] font-medium cursor-pointer`}
+              onClick={() => setActive(link.title)}
+            >
+              <a href={`#${link.id}`}>{link.title}</a>
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
   );
